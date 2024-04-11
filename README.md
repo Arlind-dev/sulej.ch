@@ -1,3 +1,3 @@
 # sulej.ch
 
-[suelj.ch](https://sulej.ch)
+[sulej.ch](https://sulej.ch)
