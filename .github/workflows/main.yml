@@ -19,13 +19,14 @@ jobs:
           ref: ${{ github.event.pull_request.merge_commit_sha }}
           fetch-depth: '0'
       - name: Bump version and push tag
+        id: bump_version
         uses: anothrNick/github-tag-action@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           WITH_V: true
           PRERELEASE: false
 
-  docker:
+  docker-deploy:
     needs: bump-version
     runs-on: ubuntu-22.04
     steps:
@@ -40,7 +41,28 @@ jobs:
           IMAGE_NAME="sulej.ch"
           git pull
           VERSION=$(git describe --tags --abbrev=0)
+          echo "VERSION=${VERSION}" >> $GITHUB_ENV
           docker build -t ghcr.io/${{ secrets.GH_USERNAME }}/${IMAGE_NAME}:latest .
           docker build -t ghcr.io/${{ secrets.GH_USERNAME }}/${IMAGE_NAME}:${VERSION} .
           docker push ghcr.io/${{ secrets.GH_USERNAME }}/${IMAGE_NAME}:${VERSION}
           docker push ghcr.io/${{ secrets.GH_USERNAME }}/${IMAGE_NAME}:latest
+
+  create-release:
+    needs: docker-deploy
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Create GitHub Release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ env.VERSION }}
+          release_name: Release ${{ env.VERSION }}
+          body: |
+            Changes in this release:
+            - Description of changes
+          draft: false
+          prerelease: false
