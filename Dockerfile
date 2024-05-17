@@ -1,9 +1,5 @@
-FROM node:alpine3.18
+FROM nginx:latest
 
-WORKDIR /app
+COPY index.html /usr/share/nginx/html/
 
-COPY . .
-RUN npm install
-RUN npm run start
-
-EXPOSE 4200
+EXPOSE 80
