@@ -1,6 +1,6 @@
 # sulej.ch
 
-This is the official repository of [sulej.ch](https://sulej.ch), my personal website.
+Welcome to the official repository of sulej.ch, my personal website.
 
 ## Contributions
 
