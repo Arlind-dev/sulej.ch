@@ -1,4 +1,4 @@
-name: Deploy release
+name: Deploy docker
 
 on:
   pull_request:
@@ -46,23 +46,3 @@ jobs:
           docker build -t ghcr.io/${{ secrets.GH_USERNAME }}/${IMAGE_NAME}:${VERSION} .
           docker push ghcr.io/${{ secrets.GH_USERNAME }}/${IMAGE_NAME}:${VERSION}
           docker push ghcr.io/${{ secrets.GH_USERNAME }}/${IMAGE_NAME}:latest
-
-  create-release:
-    needs: docker-deploy
-    runs-on: ubuntu-22.04
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Create GitHub Release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ env.VERSION }}
-          release_name: Release ${{ env.VERSION }}
-          body: |
-            Changes in this release:
-            - Description of changes
-          draft: false
-          prerelease: false
