@@ -8,7 +8,29 @@ Welcome to the official repository of [sulej.ch](https://sulej.ch/), my personal
 
 ## Usage
 
-Install the `docker-compose.yml` from the release and run it and visit `localhost:8080`.
+There is a Docker image that's ready any time. You can run it using Docker Compose or Docker Run.
+
+### Docker Compose
+
+```yml
+services:
+  sulej.ch:
+    image: ghcr.io/arlind-dev/sulej.ch:v0.1.0
+    container_name: sulejch
+    restart: unless-stopped
+    ports:
+      - 8080:80
+```
+
+### Docker Run
+
+```bash
+docker run -d \
+  --name sulejch \
+  --restart unless-stopped \
+  -p 8080:80 \
+  ghcr.io/arlind-dev/sulej.ch:v0.1.0
+```
 
 ## Contributions
 
