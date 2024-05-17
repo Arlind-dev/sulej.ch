@@ -24,3 +24,22 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           WITH_V: true
           PRERELEASE: true
+
+  docker:
+    needs: bump-version
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Login to GitHub Container Registry
+        run: echo ${{ secrets.GH_TOKEN }} | docker login ghcr.io -u ${{ secrets.GH_USERNAME }} --password-stdin
+
+      - name: Build and push Docker images
+        run: |
+          IMAGE_NAME="sulej.ch"
+          VERSION=$(git describe --tags --abbrev=0)
+          docker build -t ghcr.io/${{ secrets.GH_USERNAME }}/${IMAGE_NAME}:latest .
+          docker build -t ghcr.io/${{ secrets.GH_USERNAME }}/${IMAGE_NAME}:${VERSION} .
+          docker push ghcr.io/${{ secrets.GH_USERNAME }}/${IMAGE_NAME}:${VERSION}
+          docker push ghcr.io/${{ secrets.GH_USERNAME }}/${IMAGE_NAME}:latest
