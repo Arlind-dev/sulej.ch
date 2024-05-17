@@ -38,6 +38,7 @@ jobs:
       - name: Build and push Docker images
         run: |
           IMAGE_NAME="sulej.ch"
+          git pull
           VERSION=$(git describe --tags --abbrev=0)
           docker build -t ghcr.io/${{ secrets.GH_USERNAME }}/${IMAGE_NAME}:latest .
           docker build -t ghcr.io/${{ secrets.GH_USERNAME }}/${IMAGE_NAME}:${VERSION} .
