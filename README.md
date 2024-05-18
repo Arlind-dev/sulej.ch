@@ -4,7 +4,8 @@ Welcome to the official repository of [sulej.ch](https://sulej.ch/), my personal
 
 ## Requirements
 
-- Docker
+-   Docker
+-   Node
 
 ## Usage
 
@@ -14,12 +15,12 @@ There is a Docker image that's ready to use at any time. You can run it using Do
 
 ```yml
 services:
-  sulej.ch:
-    image: ghcr.io/arlind-dev/sulej.ch:latest
-    container_name: sulejch
-    restart: unless-stopped
-    ports:
-      - 8080:80
+    sulej.ch:
+        image: ghcr.io/arlind-dev/sulej.ch:latest
+        container_name: sulejch
+        restart: unless-stopped
+        ports:
+            - 8080:80
 ```
 
 ### Docker Run
@@ -32,17 +33,33 @@ docker run -d \
   ghcr.io/arlind-dev/sulej.ch:latest
 ```
 
+## Building it yourself
+
+Clone the repository
+
+```
+git clone https://github.com/Arlind-dev/sulej.ch.git
+```
+
+```
+npm install
+```
+
+```
+npm run build
+```
+
+Go on Port 4200
+
 ## Contributions
 
 Contributions to this project are welcome and greatly appreciated. If you find any bugs, please create an issue or a pull request on the project's GitHub repository.
 
 Feel free to fork this repository and modify it to fit your needs. If you do so, please credit the original repository.
 
-<!--
 ## Contributors
 
 Thank you @MaximilianKos for helping me create the first real release of this Website! (v0.2.0)
--->
 
 ## License
 
