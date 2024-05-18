@@ -8,14 +8,14 @@ Welcome to the official repository of [sulej.ch](https://sulej.ch/), my personal
 
 ## Usage
 
-There is a Docker image that's ready any time. You can run it using Docker Compose or Docker Run.
+There is a Docker image that's ready to use at any time. You can run it using Docker Compose or Docker Run. You can add any of the tags available in this repository to rollback to a previous version (e.g., :v0.1.0).
 
 ### Docker Compose
 
 ```yml
 services:
   sulej.ch:
-    image: ghcr.io/arlind-dev/sulej.ch:v0.1.0
+    image: ghcr.io/arlind-dev/sulej.ch:latest
     container_name: sulejch
     restart: unless-stopped
     ports:
@@ -29,7 +29,7 @@ docker run -d \
   --name sulejch \
   --restart unless-stopped \
   -p 8080:80 \
-  ghcr.io/arlind-dev/sulej.ch:v0.1.0
+  ghcr.io/arlind-dev/sulej.ch:latest
 ```
 
 ## Contributions
