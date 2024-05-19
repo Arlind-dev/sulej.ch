@@ -5,28 +5,8 @@
 	import Cursor from '../components/atoms/Cursor.svelte';
 
 	let loading = true;
-	let playSFX: (() => void) | undefined;
 
 	onMount(() => {
-		// need to create our own audio context as the default Audio() pauses any music playing
-		let buffer: AudioBuffer;
-		const audioCtx = new window.AudioContext();
-		const request = new XMLHttpRequest();
-		request.responseType = 'arraybuffer';
-		request.onload = function () {
-			const audioData: ArrayBuffer = request.response;
-			audioCtx.decodeAudioData(audioData, function (decodedBuffer) {
-				buffer = decodedBuffer;
-				playSFX = () => {
-					const source = audioCtx.createBufferSource();
-					source.buffer = buffer;
-					source.connect(audioCtx.destination);
-					source.start(0);
-				};
-			});
-		};
-		request.send();
-
 		if (document.readyState === 'complete') {
 			loading = false;
 		}
@@ -58,14 +38,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="og:title" content="sulej.ch" />
 	<meta content="/default.png" property="og:image" />
-	<meta property="og:description" content="the only website ever" />
+	<meta property="og:description" content="Arlind Sulejmani" />
 	<meta name="twitter:image" itemprop="image" content="/default.png" />
 	<meta name="twitter:card" content="summary" />
 	<meta name="theme-color" content="#524dad" />
 	<title>sulej.ch</title>
 </svelte:head>
-
-<svelte:window on:click={playSFX} />
 
 <Cursor />
 <span class:loading>
