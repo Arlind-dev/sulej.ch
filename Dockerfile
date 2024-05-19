@@ -12,7 +12,7 @@ RUN npm run build --prod
 
 FROM nginx:latest
 
-COPY --from=build /app/dist/sulej.ch/browser /usr/share/nginx/html
+COPY --from=build /app/build /usr/share/nginx/html
 
 EXPOSE 80
 
