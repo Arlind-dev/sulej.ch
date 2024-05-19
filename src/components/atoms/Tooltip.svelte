@@ -8,7 +8,6 @@
 	onMount(() => (loaded = true));
 </script>
 
-<!-- preventing layout shifts by checking if page is fully loaded. if not, return original slot -->
 {#if loaded && tip}
 	<div class="tooltip-wrapper">
 		<span class="tooltip" class:active>

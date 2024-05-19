@@ -11,7 +11,6 @@
 	onMount(async () => {
 		const response = await fetch('https://gh-pinned-repos-tsj7ta5xfhep.deno.dev/?username=arlind-dev');
 		let unpatched = await response.json();
-		// patch repo owners having a slash at the end of them
 		for (let i = 0; i < unpatched.length; i++) {
 			const element = unpatched[i];
 			if ((element.owner as string).endsWith('/')) {

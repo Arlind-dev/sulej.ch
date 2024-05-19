@@ -6,7 +6,7 @@
 <nav>
 	<div class:scrolled={y > 20}>
 		<ul>
-			<Nav href="#home" section="/" isSelected={y < 350}>
+			<Nav href="#home" section="/" isSelected={y < 100}>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					width="24"
@@ -18,7 +18,7 @@
 				/></svg
 				>
 			</Nav>
-			<Nav href="#about" section="about" isSelected={y > 350 && y < 675}>
+			<Nav href="#about" section="about" isSelected={y >= 100 && y <= 400}>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					width="24"
@@ -30,7 +30,7 @@
 				/></svg
 				>
 			</Nav>
-			<Nav href="#work" section="work" isSelected={y > 675}>
+			<Nav href="#work" section="work" isSelected={y > 400}>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					width="24"
@@ -46,7 +46,6 @@
 	</div>
 </nav>
 
-<!-- this is the coolest thing ever wtf?? -->
 <svelte:window bind:scrollY={y} />
 
 <style lang="scss">
