@@ -22,10 +22,8 @@
 	<div class="text">
 		<h2>bio</h2>
 		<p>
-			Hey there, I'm Arlind Sulejmani! <br>I'm a <Tooltip tip={age}
-				><span>{Math.floor(Number(age))}</span></Tooltip
-			>
-			year old IT Apprentice based in Switzerland.
+			Hey there, I'm Arlind Sulejmani!
+			<br>I'm a <Tooltip tip={age}><span>{Math.floor(Number(age))}</span></Tooltip> year old IT Apprentice based in Switzerland.
 		</p>
 	</div>
 </section>
