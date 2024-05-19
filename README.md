@@ -59,7 +59,7 @@ Feel free to fork this repository and modify it to fit your needs. If you do so,
 
 ## Contributors
 
-Thank you @MaximilianKos for helping me create the first real release of this Website! (v0.2.0)
+@MaximilianKos: v0.2.0, v0.4.0
 
 ## License
 
