@@ -1,19 +1,19 @@
 <script lang="ts">
 	import { user } from '../../util/discord';
 
-let discordUser = `@${user.username}`,
-	discordUserImage = 'discord.png',
-	state: string,
-	smallImage: string,
-	currentSetInterval: ReturnType<typeof setInterval>
+	let discordUser = `@${user.username}`,
+		discordUserImage = 'discord.png',
+		state: string,
+		smallImage: string;
 
-function localTime() {
-	state = new Date().toLocaleTimeString('en-US', { timeZone: 'Europe/Zurich' });
-}
+	function localTime() {
+		state = new Date().toLocaleTimeString('en-US', { timeZone: 'Europe/Zurich', hour12: false });
+	}
 
-localTime();
-currentSetInterval = setInterval(() => localTime(), 1000);
+	localTime();
+	setInterval(() => localTime(), 1000);
 </script>
+
 
 <h2>discord</h2>
 <div class="contain">
