@@ -7,7 +7,7 @@
 <footer class="wrapper">
 	<Socials />
 	<h6>
-		<Tooltip tip="See in GitHub!"><a href="https://github.com/Arlind-dev/sulej.ch" target="_blank" rel="noreferrer">v0.4.0</a></Tooltip>
+		<Tooltip tip="See in GitHub!"><a href="https://github.com/Arlind-dev/sulej.ch" target="_blank" rel="noreferrer">v0.5.0</a></Tooltip>
 	</h6>
 </footer>
 
