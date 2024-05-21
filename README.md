@@ -4,8 +4,8 @@ Welcome to the official repository of [sulej.ch](https://sulej.ch/), my personal
 
 ## Requirements
 
--   Docker
--   Node
+- Docker
+- Node
 
 ## Usage
 
@@ -15,12 +15,12 @@ There is a Docker image that's ready to use at any time. You can run it using Do
 
 ```yml
 services:
-    sulej.ch:
-        image: ghcr.io/arlind-dev/sulej.ch:latest
-        container_name: sulejch
-        restart: unless-stopped
-        ports:
-            - 8080:80
+  sulej.ch:
+    image: ghcr.io/arlind-dev/sulej.ch:latest
+    container_name: sulejch
+    restart: unless-stopped
+    ports:
+      - 8080:80
 ```
 
 ### Docker Run
@@ -33,29 +33,47 @@ docker run -d \
   ghcr.io/arlind-dev/sulej.ch:latest
 ```
 
-## Building it yourself
+## Running the Project
 
-Clone the repository
+To run the project locally, follow these steps:
 
-```
-git clone https://github.com/Arlind-dev/sulej.ch.git
-```
+1. **Clone the repository:**
 
-```
-npm install
-```
+   ```bash
+   git clone https://github.com/Arlind-dev/sulej.ch.git
+   ```
 
-```
+2. **Install the dependencies:**
+
+   ```bash
+   npm install
+   ```
+
+3. **Start the development server:**
+
+   ```bash
+   npm run dev
+   ```
+
+4. **Access the application:**
+
+   Open your web browser and navigate to `http://localhost:5173`.
+
+## Building the Project
+
+To create a production build, execute the following command:
+
+```bash
 npm run build
 ```
 
-Go on Port 4200
+The built files will be generated in the `/build` directory.
 
 ## Contributions
 
 Contributions to this project are welcome and greatly appreciated. If you find any bugs, please create an issue or a pull request on the project's GitHub repository.
 
-Feel free to fork this repository and modify it to fit your needs. If you do so, please credit the original repository.
+Feel free to fork this repository and modify it to fit your needs. If you do so, please credit [the original repository](https://github.com/xafn/afn.im).
 
 ## Contributors
 
