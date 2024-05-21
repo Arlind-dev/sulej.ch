@@ -58,8 +58,8 @@
 	.text::before {
 		@include outlineText(
 			$content: 'arlind',
-			$translateX: 87%,
-			$translateY: 10%,
+			$translateX: 55%,
+			$translateY: 40%,
 			$fontSize: 200px,
 			$opacity: 0.22
 		);
