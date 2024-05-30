@@ -9,9 +9,7 @@
   let repos: Repo[];
 
   onMount(async () => {
-    const response = await fetch(
-      "https://gh-pinned-repos-tsj7ta5xfhep.deno.dev/?username=arlind-dev"
-    );
+    const response = await fetch("https://repos.sulej.ch/?username=arlind-dev");
     let unpatched = await response.json();
     for (let i = 0; i < unpatched.length; i++) {
       const element = unpatched[i];
