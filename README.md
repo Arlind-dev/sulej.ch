@@ -17,7 +17,7 @@ There is a Docker image that's ready to use at any time. You can run it using Do
 services:
   sulej.ch:
     image: ghcr.io/arlind-dev/sulej.ch:latest
-    container_name: sulejch
+    container_name: sulej.ch
     restart: unless-stopped
     ports:
       - 8080:80
@@ -27,7 +27,7 @@ services:
 
 ```bash
 docker run -d \
-  --name sulejch \
+  --name sulej.ch \
   --restart unless-stopped \
   -p 8080:80 \
   ghcr.io/arlind-dev/sulej.ch:latest
