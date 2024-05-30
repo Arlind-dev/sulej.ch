@@ -19,7 +19,6 @@ jobs:
         run: |
           IMAGE_NAME="sulej.ch"
           VERSION=$(git describe --tags --abbrev=0)
-          echo "VERSION=${VERSION}" >> $GITHUB_ENV
           docker build -t ghcr.io/${{ secrets.GH_USERNAME }}/${IMAGE_NAME}:latest .
           docker build -t ghcr.io/${{ secrets.GH_USERNAME }}/${IMAGE_NAME}:${VERSION} .
           docker push ghcr.io/${{ secrets.GH_USERNAME }}/${IMAGE_NAME}:${VERSION}
