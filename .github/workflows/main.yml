@@ -1,33 +1,12 @@
 name: Deploy docker
 
 on:
-  pull_request:
-    types:
-      - closed
-    branches:
-      - main
+  push:
+    tags:
+      - '**'
 
 jobs:
-  bump-version:
-    if: github.event.pull_request.merged == true
-    runs-on: ubuntu-22.04
-    permissions:
-      contents: write
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: ${{ github.event.pull_request.merge_commit_sha }}
-          fetch-depth: '0'
-      - name: Bump version and push tag
-        id: bump_version
-        uses: anothrNick/github-tag-action@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          WITH_V: true
-          PRERELEASE: false
-
   docker-deploy:
-    needs: bump-version
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout code
