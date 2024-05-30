@@ -37,7 +37,7 @@ docker run -d \
 
 I deployed a tool called [gh-pinned-repos](https://github.com/Arlind-dev/gh-pinned-repos) that scrapes your pinned GitHub repositories (works only with public profiles). This tool is a fork, and you can either host it yourself or use the existing deployment.
 
-To change the repository link, edit the file located at [/src/components/organisms/Repos.svelte](https://github.com/Arlind-dev/sulej.ch/blob/f5c5a070e4e1b1f680e157288f269d792bc6f170/src/components/organisms/Repos.svelte#L12).
+To change the repository link, edit the file located at [/src/components/organisms/Repos.svelte](https://github.com/Arlind-dev/sulej.ch/blob/6ab0531c1f83a8ae2789800d81f41b11f0c6c473/src/components/organisms/Repos.svelte#L12).
 
 ## Running the Project
 
