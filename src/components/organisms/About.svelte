@@ -3,9 +3,9 @@
   import Discord from "../molecules/Discord.svelte";
 
   let getAge = () => {
-    let birthDate = new Date("2004/09/24");
+    let birthDate = new Date("2004-09-24");
     const ageMs = Date.now() - birthDate.getTime();
-    const preciseAge = (ageMs / 31536000000).toFixed(10);
+    const preciseAge = (ageMs / 31556952000).toFixed(10);
     return preciseAge;
   };
 
@@ -23,9 +23,12 @@
     <h2>bio</h2>
     <p>
       Hey there, I'm Arlind Sulejmani!
-      <br />I'm a <Tooltip tip={age}
-        ><span>{Math.floor(Number(age))}</span></Tooltip
-      > year old IT Apprentice based in Switzerland.
+      <br />
+      I'm a
+      <Tooltip tip={`${age}, 24.09.2024`}>
+        <span>{Math.floor(Number(age))}</span>
+      </Tooltip>
+      year old IT Apprentice based in Switzerland.
     </p>
   </div>
 </section>
