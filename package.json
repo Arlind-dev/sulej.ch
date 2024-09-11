@@ -18,7 +18,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@indaco/svelte-iconoir": "^7.8.0",
+		"@indaco/svelte-iconoir": "^7.9.0",
 		"@sveltejs/adapter-static": "^3.0.4"
 	}
 }
