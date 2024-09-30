@@ -9,5 +9,13 @@ export default defineConfig({
         api: 'modern'
       }
     }
-  }
+  },
+  start: {
+    server: {
+      preset: 'cloudflare_module',
+      rollupConfig: {
+        external: ['__STATIC_CONTENT_MANIFEST', 'node:async_hooks'],
+      },
+    },
+  },
 });
