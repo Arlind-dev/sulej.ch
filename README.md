@@ -52,13 +52,13 @@ To run the project locally, follow these steps:
 2. **Install the dependencies:**
 
    ```bash
-   npm install
+   pnpm install
    ```
 
 3. **Start the development server:**
 
    ```bash
-   npm run dev
+   pnpm run dev
    ```
 
 4. **Access the application:**
@@ -70,7 +70,7 @@ To run the project locally, follow these steps:
 To create a production build, execute the following command:
 
 ```bash
-npm run build
+pnpm run build
 ```
 
 The built files will be generated in the `/build` directory.
