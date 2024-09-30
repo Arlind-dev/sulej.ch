@@ -8,8 +8,11 @@
 
   let repos: Repo[];
 
-  onMount(async () => {
-    const response = await fetch("https://repos.sulej.ch/?username=arlind-dev");
+  async function fetchRepos(url: string): Promise<Repo[]> {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error("Failed to fetch data");
+    }
     let unpatched = await response.json();
     for (let i = 0; i < unpatched.length; i++) {
       const element = unpatched[i];
@@ -17,7 +20,22 @@
         unpatched[i].owner = unpatched[i].owner.slice(0, -1);
       }
     }
-    repos = unpatched;
+    return unpatched;
+  }
+
+  onMount(async () => {
+    try {
+      repos = await fetchRepos("https://repos.sulej.ch/?username=arlind-dev");
+    } catch (error) {
+      // Fallback to another URL if the first one fails (my school blocks the first one)
+      try {
+        repos = await fetchRepos(
+          "https://sulej-repos.deno.dev/?username=arlind-dev"
+        );
+      } catch (fallbackError) {
+        console.error("Both repo fetch attempts failed:", fallbackError);
+      }
+    }
   });
 </script>
 
