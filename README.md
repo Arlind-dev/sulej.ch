@@ -21,6 +21,12 @@ services:
     restart: unless-stopped
     ports:
       - 8080:80
+    networks:
+      - sulej.ch
+
+networks:
+  sulej.ch:
+    name: sulej.ch
 ```
 
 ### Docker Run
