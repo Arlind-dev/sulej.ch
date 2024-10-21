@@ -9,7 +9,7 @@
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
 	},
 	"devDependencies": {
-		"@sveltejs/kit": "^2.7.1",
+		"@sveltejs/kit": "^2.7.2",
 		"@sveltejs/vite-plugin-svelte": "^3.1.2",
 		"sass": "^1.80.2",
 		"sass-embedded": "^1.80.2",
