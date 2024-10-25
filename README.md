@@ -4,8 +4,9 @@ Welcome to the official repository of [sulej.ch](https://sulej.ch/), my personal
 
 ## Requirements
 
-- Docker
-- Node
+- **[Node](https://nodejs.org/en):** Version 20 LTS or higher
+- **[pnpm](https://pnpm.io/):** Version 9.12.2 or higher
+- **[Docker](https://www.docker.com/):** (Optional) Required only if you plan to use the provided Docker image, to run the static website.
 
 ## Usage
 
@@ -73,13 +74,23 @@ To run the project locally, follow these steps:
 
 ## Building the Project
 
-To create a production build, execute the following command:
+To build the project for production, follow these steps:
 
-```bash
-pnpm run build
-```
+1. **Create a production build:**
 
-The built files will be generated in the `/build` directory.
+   ```bash
+   pnpm run build
+   ```
+
+   This command will generate the optimized build files in the `/build` directory.
+
+2. **Test the production build:**
+
+   ```bash
+   pnpm run preview
+   ```
+
+   This command will launch a local server to preview the production build.
 
 ## Contributions
 
