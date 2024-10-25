@@ -34,7 +34,7 @@
 </section>
 
 <style lang="scss">
-  @import "../../styles/mixins.scss";
+  @use "../../styles/mixins.scss" as mixins;
 
   section {
     margin-bottom: 6rem;
@@ -61,7 +61,7 @@
   }
 
   .text::before {
-    @include outlineText(
+    @include mixins.outlineText(
       $content: "arlind",
       $translateX: 55%,
       $translateY: 40%,

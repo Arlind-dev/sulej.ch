@@ -95,7 +95,7 @@
 </section>
 
 <style lang="scss">
-  @import "../../styles/mixins.scss";
+  @use "../../styles/mixins.scss" as mixins;
 
   .title {
     display: flex;
@@ -106,6 +106,7 @@
       justify-content: left;
     }
   }
+
   .repo-card {
     padding: 1rem 1.25rem;
     background-color: var(--elevation-two);
