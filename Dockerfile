@@ -1,14 +1,14 @@
-FROM node:22-alpine3.18 AS build
+FROM node:20 AS build
 
 WORKDIR /app
 
 COPY package*.json ./
 
-RUN npm install
+RUN pnpm install
 
 COPY . .
 
-RUN npm run build --prod
+RUN pnpm run build
 
 FROM nginx:latest
 
