@@ -90,7 +90,9 @@ To build the project for production, follow these steps:
    pnpm run preview
    ```
 
-   This command will launch a local server to preview the production build.
+3. **Access the application:**
+
+   Open your web browser and navigate to `http://localhost:4173`.
 
 ## Contributions
 
