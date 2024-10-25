@@ -58,7 +58,8 @@
                 <h6>{owner}</h6>
               </div>
               <div id="open">
-                <OpenNewWindowIcon color="var(--text-secondary)" size="20px" />
+                <OpenNewWindowIcon color="var(--text-secondary)" size="20px"
+                ></OpenNewWindowIcon>
               </div>
             </div>
             <div>
@@ -67,18 +68,21 @@
             </div>
             <div class="info-container">
               <div class="info">
-                <span class="dot" style="background-color: {languageColor}" />
+                <span class="dot" style="background-color: {languageColor}"
+                ></span>
                 <h6>{language}</h6>
               </div>
               <div class="info">
                 {#if stars}
-                  <StarIcon color="var(--text-secondary)" size="16px" />
+                  <StarIcon color="var(--text-secondary)" size="16px"
+                  ></StarIcon>
                   <h6>{stars}</h6>
                 {/if}
               </div>
               <div class="info">
                 {#if forks}
-                  <GitForkIcon color="var(--text-secondary)" size="16px" />
+                  <GitForkIcon color="var(--text-secondary)" size="16px"
+                  ></GitForkIcon>
                   <h6>{forks}</h6>
                 {/if}
               </div>
@@ -88,7 +92,7 @@
       {/each}
     {:else}
       {#each Array(4) as _}
-        <div class="repo-card shimmer" />
+        <div class="repo-card shimmer"></div>
       {/each}
     {/if}
   </div>

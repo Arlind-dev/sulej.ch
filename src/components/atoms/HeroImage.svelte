@@ -24,9 +24,9 @@
     class="img"
     role="img"
     style:background-image="url(default.webp)"
-    style:transform="perspective(500px) {zoom ? "scale(1.05)" : ""} rotateX({xRotation}deg)
+    style:transform="perspective(500px) {zoom ? 'scale(1.05)' : ''} rotateX({xRotation}deg)
     rotateY({yRotation}deg)"
-  />
+  ></div>
 </div>
 
 <style lang="scss">

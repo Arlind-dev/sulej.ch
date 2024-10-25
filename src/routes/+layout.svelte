@@ -49,9 +49,3 @@
 <span class:loading>
   <slot />
 </span>
-
-<style>
-  .loading * {
-    transition: none;
-  }
-</style>
