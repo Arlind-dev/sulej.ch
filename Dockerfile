@@ -10,11 +10,9 @@ COPY package.json ./
 
 COPY pnpm-lock.yaml ./
 
-RUN pnpm install
-
 COPY . .
 
-RUN pnpm run prepare
+RUN pnpm install
 
 RUN pnpm run build
 
