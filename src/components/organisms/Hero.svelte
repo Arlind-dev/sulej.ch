@@ -25,7 +25,7 @@
 </section>
 
 <style lang="scss">
-  @import "../../styles/mixins.scss";
+  @use "../../styles/mixins.scss" as mixins;
 
   section {
     scroll-margin-top: 20rem;
@@ -58,7 +58,7 @@
   }
 
   h1::before {
-    @include outlineText(
+    @include mixins.outlineText(
       $content: "///",
       $translateX: -145%,
       $letterSpacing: -0.1em

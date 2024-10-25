@@ -3,8 +3,8 @@
 </script>
 
 <button on:click on:keypress class:button-with-side={side}>
-  <div class:side />
-  <slot />
+  <div class:side></div>
+  <slot></slot>
 </button>
 
 <style lang="scss">
