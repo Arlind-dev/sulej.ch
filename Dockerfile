@@ -12,6 +12,8 @@ RUN pnpm install
 
 COPY . .
 
+RUN pnpm run prepare
+
 RUN pnpm run build
 
 FROM nginx:latest
