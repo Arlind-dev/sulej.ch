@@ -6,10 +6,6 @@ RUN npm install -g npm@latest
 
 RUN npm install -g pnpm@latest
 
-COPY package.json ./
-
-COPY pnpm-lock.yaml ./
-
 COPY . .
 
 RUN pnpm install
