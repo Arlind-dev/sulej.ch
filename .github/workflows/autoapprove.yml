@@ -12,3 +12,4 @@ jobs:
       - uses: hmarr/auto-approve-action@v4
         with:
           review-message: "Auto approved automated PR"
+          github-token: ${{ secrets.GITHUB_TOKEN }}
