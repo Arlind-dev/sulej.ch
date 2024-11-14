@@ -14,7 +14,7 @@
 	"dependencies": {
 		"@indaco/svelte-iconoir": "^7.9.0",
 		"@sveltejs/adapter-static": "^3.0.6",
-		"@sveltejs/kit": "^2.8.0",
+		"@sveltejs/kit": "^2.8.1",
 		"@sveltejs/vite-plugin-svelte": "^4.0.0",
 		"svelte": "^5.1.16",
 		"svelte-check": "^4.0.7",
