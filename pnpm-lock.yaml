@@ -25,13 +25,13 @@ importers:
         version: 5.18.0
       svelte-check:
         specifier: ^4.1.1
-        version: 4.1.1(svelte@5.18.0)(typescript@5.7.2)
+        version: 4.1.1(svelte@5.18.0)(typescript@5.7.3)
       svelte-preprocess:
         specifier: ^6.0.3
-        version: 6.0.3(postcss@8.4.49)(sass@1.80.4)(svelte@5.18.0)(typescript@5.7.2)
+        version: 6.0.3(postcss@8.4.49)(sass@1.80.4)(svelte@5.18.0)(typescript@5.7.3)
       typescript:
-        specifier: ^5.7.2
-        version: 5.7.2
+        specifier: ^5.7.3
+        version: 5.7.3
       vite:
         specifier: ^6.0.7
         version: 6.0.7(sass@1.80.4)
@@ -673,8 +673,8 @@ packages:
     resolution: {integrity: sha512-sf4i37nQ2LBx4m3wB74y+ubopq6W/dIzXg0FDGjsYnZHVa1Da8FH853wlL2gtUhg+xJXjfk3kUZS3BRoQeoQBQ==}
     engines: {node: '>=6'}
 
-  typescript@5.7.2:
-    resolution: {integrity: sha512-i5t66RHxDvVN40HfDd1PsEThGNnlMCMT3jMUuoh9/0TaqWevNontacunWyN02LA9/fIbEWlcHZcgTKb9QoaLfg==}
+  typescript@5.7.3:
+    resolution: {integrity: sha512-84MVSjMEHP+FQRPy3pX9sTVV/INIex71s9TL2Gm5FG/WG1SqXeKyZ0k7/blY/4FdOzI12CBy1vGc4og/eus0fw==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -1187,7 +1187,7 @@ snapshots:
 
   source-map-js@1.2.1: {}
 
-  svelte-check@4.1.1(svelte@5.18.0)(typescript@5.7.2):
+  svelte-check@4.1.1(svelte@5.18.0)(typescript@5.7.3):
     dependencies:
       '@jridgewell/trace-mapping': 0.3.25
       chokidar: 4.0.2
@@ -1195,17 +1195,17 @@ snapshots:
       picocolors: 1.1.1
       sade: 1.8.1
       svelte: 5.18.0
-      typescript: 5.7.2
+      typescript: 5.7.3
     transitivePeerDependencies:
       - picomatch
 
-  svelte-preprocess@6.0.3(postcss@8.4.49)(sass@1.80.4)(svelte@5.18.0)(typescript@5.7.2):
+  svelte-preprocess@6.0.3(postcss@8.4.49)(sass@1.80.4)(svelte@5.18.0)(typescript@5.7.3):
     dependencies:
       svelte: 5.18.0
     optionalDependencies:
       postcss: 8.4.49
       sass: 1.80.4
-      typescript: 5.7.2
+      typescript: 5.7.3
 
   svelte@5.18.0:
     dependencies:
@@ -1236,7 +1236,7 @@ snapshots:
 
   totalist@3.0.1: {}
 
-  typescript@5.7.2: {}
+  typescript@5.7.3: {}
 
   vite@6.0.7(sass@1.80.4):
     dependencies:
