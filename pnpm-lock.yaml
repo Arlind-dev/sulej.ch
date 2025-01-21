@@ -13,10 +13,10 @@ importers:
         version: 7.10.0(svelte@5.18.0)
       '@sveltejs/adapter-static':
         specifier: ^3.0.6
-        version: 3.0.6(@sveltejs/kit@2.12.1(@sveltejs/vite-plugin-svelte@5.0.2(svelte@5.18.0)(vite@6.0.7(sass@1.80.4)))(svelte@5.18.0)(vite@6.0.7(sass@1.80.4)))
+        version: 3.0.6(@sveltejs/kit@2.16.1(@sveltejs/vite-plugin-svelte@5.0.2(svelte@5.18.0)(vite@6.0.7(sass@1.80.4)))(svelte@5.18.0)(vite@6.0.7(sass@1.80.4)))
       '@sveltejs/kit':
-        specifier: ^2.12.1
-        version: 2.12.1(@sveltejs/vite-plugin-svelte@5.0.2(svelte@5.18.0)(vite@6.0.7(sass@1.80.4)))(svelte@5.18.0)(vite@6.0.7(sass@1.80.4))
+        specifier: ^2.16.1
+        version: 2.16.1(@sveltejs/vite-plugin-svelte@5.0.2(svelte@5.18.0)(vite@6.0.7(sass@1.80.4)))(svelte@5.18.0)(vite@6.0.7(sass@1.80.4))
       '@sveltejs/vite-plugin-svelte':
         specifier: ^5.0.2
         version: 5.0.2(svelte@5.18.0)(vite@6.0.7(sass@1.80.4))
@@ -400,8 +400,8 @@ packages:
     peerDependencies:
       '@sveltejs/kit': ^2.0.0
 
-  '@sveltejs/kit@2.12.1':
-    resolution: {integrity: sha512-M3rPijGImeOkI0DBJSwjqz+YFX2DyOf6NzWgHVk3mqpT06dlYCpcv5xh1q4rYEqB58yQlk4QA1Y35PUqnUiFKw==}
+  '@sveltejs/kit@2.16.1':
+    resolution: {integrity: sha512-2pF5sgGJx9brYZ/9nNDYnh5KX0JguPF14dnvvtf/MqrvlWrDj/e7Rk3LBJPecFLLK1GRs6ZniD24gFPqZm/NFw==}
     engines: {node: '>=18.13'}
     hasBin: true
     peerDependencies:
@@ -456,6 +456,10 @@ packages:
     resolution: {integrity: sha512-/b57FK+bblSU+dfewfFe0rT1YjVDfOmeLQwCAuC+vwvgLkXboATqqmy+Ipux6JrF6L5joe5CBnFOw+gLWH6yKg==}
     engines: {node: '>= 14.16.0'}
 
+  chokidar@4.0.3:
+    resolution: {integrity: sha512-Qgzu8kfBvo+cA4962jnP1KkS6Dop5NS6g7R5LFYJr4b8Ub94PPQXUksCw9PvXoeXPRRddRNC5C1JQUR2SMGtnA==}
+    engines: {node: '>= 14.16.0'}
+
   clsx@2.1.1:
     resolution: {integrity: sha512-eYm0QWBtUrBWZWG0d386OGAw16Z995PiOVo2B7bjWSbHedGl5e0ZWaq65kOGgUSNesEIDkB9ISbTg/JK9dhCZA==}
     engines: {node: '>=6'}
@@ -493,6 +497,9 @@ packages:
   esm-env@1.2.1:
     resolution: {integrity: sha512-U9JedYYjCnadUlXk7e1Kr+aENQhtUaoaV9+gZm1T8LC/YBAPJx3NSPIAurFOC0U5vrdSevnUJS2/wUVxGwPhng==}
 
+  esm-env@1.2.2:
+    resolution: {integrity: sha512-Epxrv+Nr/CaL4ZcFGPJIYLWFom+YeV1DqMLHJoEd9SYRxNbaFruBwfEX/kkHUJf55j2+TUbmDcmuilbP1TmXHA==}
+
   esrap@1.4.3:
     resolution: {integrity: sha512-Xddc1RsoFJ4z9nR7W7BFaEPIp4UXoeQ0+077UdWLxbafMQFyU79sQJMk7kxNgRwQ9/aVgaKacCHC2pUACGwmYw==}
 
@@ -512,12 +519,6 @@ packages:
     resolution: {integrity: sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==}
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
     os: [darwin]
-
-  globalyzer@0.1.0:
-    resolution: {integrity: sha512-40oNTM9UfG6aBmuKxk/giHn5nQ8RVz/SS4Ir6zgzOv9/qC3kKZ9v4etGTcJbEl/NyVQH7FGU7d+X1egr57Md2Q==}
-
-  globrex@0.1.2:
-    resolution: {integrity: sha512-uHJgbwAMwNFf5mLst7IWLNg14x1CkeqglJb/K3doi4dw6q2IvAAmM/Y81kevy83wP+Sst+nutFTYOGg3d1lsxg==}
 
   immutable@4.3.7:
     resolution: {integrity: sha512-1hqclzwYwjRDFLjcFxOM5AYkkG0rpFPpr1RLPMEuGczoS7YA8gLhy8SWXYRAA/XwfEHpfo3cw5JGioS32fnMRw==}
@@ -587,6 +588,10 @@ packages:
   readdirp@4.0.2:
     resolution: {integrity: sha512-yDMz9g+VaZkqBYS/ozoBJwaBhTbZo3UNYQHNRw1D3UFQB8oHB4uS/tAODO+ZLjGWmUbKnIlOWO+aaIiAxrUWHA==}
     engines: {node: '>= 14.16.0'}
+
+  readdirp@4.1.1:
+    resolution: {integrity: sha512-h80JrZu/MHUZCyHu5ciuoI0+WxsCxzxJTILn6Fs8rxSnFPh+UVHYfeIxK1nVGugMqkfC4vJcBOYbkfkwYK0+gw==}
+    engines: {node: '>= 14.18.0'}
 
   rollup@4.28.1:
     resolution: {integrity: sha512-61fXYl/qNVinKmGSTHAZ6Yy8I3YIJC/r2m9feHo6SwVAVcLT5MPwOUFe7EuURA/4m0NR8lXG4BBXuo/IZEsjMg==}
@@ -661,9 +666,6 @@ packages:
   svelte@5.18.0:
     resolution: {integrity: sha512-/Eb81lB8bVUxQPmkPVNBYrU9cZ544+9hE91ZUUXTMf7eWcGW84N1hS3gvv/XsUNOWLLg3IicXP2qa8W3KpTUHA==}
     engines: {node: '>=18'}
-
-  tiny-glob@0.2.9:
-    resolution: {integrity: sha512-g/55ssRPUjShh+xkfx9UPDXqhckHEsHr4Vd9zX55oSdGZc/MD0m3sferOkwWtp98bv+kcVfEHtRJgBVJzelrzg==}
 
   to-regex-range@5.0.1:
     resolution: {integrity: sha512-65P7iz6X5yEr1cwcgvQxbbIw7Uk3gOy5dIdtZ4rDveLqhrdJP+Li/Hx6tyK0NEb+2GCyneCMJiGqrADCSNk8sQ==}
@@ -952,17 +954,17 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.28.1':
     optional: true
 
-  '@sveltejs/adapter-static@3.0.6(@sveltejs/kit@2.12.1(@sveltejs/vite-plugin-svelte@5.0.2(svelte@5.18.0)(vite@6.0.7(sass@1.80.4)))(svelte@5.18.0)(vite@6.0.7(sass@1.80.4)))':
+  '@sveltejs/adapter-static@3.0.6(@sveltejs/kit@2.16.1(@sveltejs/vite-plugin-svelte@5.0.2(svelte@5.18.0)(vite@6.0.7(sass@1.80.4)))(svelte@5.18.0)(vite@6.0.7(sass@1.80.4)))':
     dependencies:
-      '@sveltejs/kit': 2.12.1(@sveltejs/vite-plugin-svelte@5.0.2(svelte@5.18.0)(vite@6.0.7(sass@1.80.4)))(svelte@5.18.0)(vite@6.0.7(sass@1.80.4))
+      '@sveltejs/kit': 2.16.1(@sveltejs/vite-plugin-svelte@5.0.2(svelte@5.18.0)(vite@6.0.7(sass@1.80.4)))(svelte@5.18.0)(vite@6.0.7(sass@1.80.4))
 
-  '@sveltejs/kit@2.12.1(@sveltejs/vite-plugin-svelte@5.0.2(svelte@5.18.0)(vite@6.0.7(sass@1.80.4)))(svelte@5.18.0)(vite@6.0.7(sass@1.80.4))':
+  '@sveltejs/kit@2.16.1(@sveltejs/vite-plugin-svelte@5.0.2(svelte@5.18.0)(vite@6.0.7(sass@1.80.4)))(svelte@5.18.0)(vite@6.0.7(sass@1.80.4))':
     dependencies:
       '@sveltejs/vite-plugin-svelte': 5.0.2(svelte@5.18.0)(vite@6.0.7(sass@1.80.4))
       '@types/cookie': 0.6.0
       cookie: 0.6.0
       devalue: 5.1.1
-      esm-env: 1.2.1
+      esm-env: 1.2.2
       import-meta-resolve: 4.1.0
       kleur: 4.1.5
       magic-string: 0.30.17
@@ -971,7 +973,6 @@ snapshots:
       set-cookie-parser: 2.7.1
       sirv: 3.0.0
       svelte: 5.18.0
-      tiny-glob: 0.2.9
       vite: 6.0.7(sass@1.80.4)
 
   '@sveltejs/vite-plugin-svelte-inspector@4.0.1(@sveltejs/vite-plugin-svelte@5.0.2(svelte@5.18.0)(vite@6.0.7(sass@1.80.4)))(svelte@5.18.0)(vite@6.0.7(sass@1.80.4))':
@@ -1019,6 +1020,11 @@ snapshots:
     dependencies:
       readdirp: 4.0.2
 
+  chokidar@4.0.3:
+    dependencies:
+      readdirp: 4.1.1
+    optional: true
+
   clsx@2.1.1: {}
 
   cookie@0.6.0: {}
@@ -1064,6 +1070,8 @@ snapshots:
 
   esm-env@1.2.1: {}
 
+  esm-env@1.2.2: {}
+
   esrap@1.4.3:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.0
@@ -1077,10 +1085,6 @@ snapshots:
 
   fsevents@2.3.3:
     optional: true
-
-  globalyzer@0.1.0: {}
-
-  globrex@0.1.2: {}
 
   immutable@4.3.7:
     optional: true
@@ -1140,6 +1144,9 @@ snapshots:
 
   readdirp@4.0.2: {}
 
+  readdirp@4.1.1:
+    optional: true
+
   rollup@4.28.1:
     dependencies:
       '@types/estree': 1.0.6
@@ -1172,7 +1179,7 @@ snapshots:
   sass@1.80.4:
     dependencies:
       '@parcel/watcher': 2.5.0
-      chokidar: 4.0.2
+      chokidar: 4.0.3
       immutable: 4.3.7
       source-map-js: 1.2.1
     optional: true
@@ -1223,11 +1230,6 @@ snapshots:
       locate-character: 3.0.0
       magic-string: 0.30.17
       zimmerframe: 1.1.2
-
-  tiny-glob@0.2.9:
-    dependencies:
-      globalyzer: 0.1.0
-      globrex: 0.1.2
 
   to-regex-range@5.0.1:
     dependencies:
