@@ -12,14 +12,14 @@
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
 	},
 	"dependencies": {
-		"@indaco/svelte-iconoir": "^7.10.0",
-		"@sveltejs/adapter-static": "^3.0.6",
-		"@sveltejs/kit": "^2.12.1",
-		"@sveltejs/vite-plugin-svelte": "^5.0.2",
-		"svelte": "^5.18.0",
-		"svelte-check": "^4.1.1",
+		"@indaco/svelte-iconoir": "^7.10.1",
+		"@sveltejs/adapter-static": "^3.0.8",
+		"@sveltejs/kit": "^2.16.1",
+		"@sveltejs/vite-plugin-svelte": "^5.0.3",
+		"svelte": "^5.19.1",
+		"svelte-check": "^4.1.4",
 		"svelte-preprocess": "^6.0.3",
-		"typescript": "^5.7.2",
-		"vite": "^6.0.7"
+		"typescript": "^5.7.3",
+		"vite": "^6.0.11"
 	}
 }
