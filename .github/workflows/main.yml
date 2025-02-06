@@ -25,7 +25,7 @@ jobs:
 
           docker buildx create --use
 
-          docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 \
+          docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7,linux/arm/v6 \
             -t ghcr.io/${{ secrets.GH_USERNAME }}/${IMAGE_NAME}:latest \
             -t ghcr.io/${{ secrets.GH_USERNAME }}/${IMAGE_NAME}:${VERSION} \
             --push .
