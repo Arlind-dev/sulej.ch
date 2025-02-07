@@ -1,7 +1,8 @@
 FROM node:alpine AS build
+
 WORKDIR /app
 
-RUN npm install -g npm@latest && npm install -g pnpm@latest
+RUN corepack enable && corepack prepare pnpm@latest --activate
 
 COPY package.json pnpm-lock.yaml ./
 
@@ -11,6 +12,6 @@ COPY . .
 
 RUN pnpm run build
 
-RUN mkdir -p /output && cp -r /app/build/* /output/
+RUN mkdir -p /output && cp -r /app/build/. /output/
 
-VOLUME ["/output"]
+VOLUME /output
