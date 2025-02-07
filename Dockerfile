@@ -1,20 +1,9 @@
-FROM node:alpine AS build
-
-WORKDIR /app
-
-RUN npm install -g npm@latest
-
-RUN npm install -g pnpm@latest
-
-COPY . .
-
-RUN pnpm install
-
-RUN pnpm run build
+FROM ghcr.io/arlind-dev/sulej.ch:build-latest AS build
 
 FROM nginx:alpine
+WORKDIR /usr/share/nginx/html
 
-COPY --from=build /app/build /usr/share/nginx/html
+COPY --from=build /output ./
 
 EXPOSE 80
 

@@ -1,0 +1,16 @@
+FROM node:alpine AS build
+WORKDIR /app
+
+RUN npm install -g npm@latest && npm install -g pnpm@latest
+
+COPY package.json pnpm-lock.yaml ./
+
+RUN pnpm install --frozen-lockfile
+
+COPY . .
+
+RUN pnpm run build
+
+RUN mkdir -p /output && cp -r /app/build/* /output/
+
+VOLUME ["/output"]

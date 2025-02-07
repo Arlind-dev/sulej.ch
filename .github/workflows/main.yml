@@ -16,16 +16,31 @@ jobs:
         uses: docker/setup-buildx-action@v3
 
       - name: Login to GitHub Container Registry
-        run: echo ${{ secrets.GH_TOKEN }} | docker login ghcr.io -u ${{ secrets.GH_USERNAME }} --password-stdin
+        run: echo "${{ secrets.GH_TOKEN }}" | docker login ghcr.io -u "${{ secrets.GH_USERNAME }}" --password-stdin
 
-      - name: Build and push multi-arch Docker images
+      - name: Get version tag
+        id: get_version
+        run: echo "VERSION=$(git describe --tags --abbrev=0 || echo latest)" >> $GITHUB_ENV
+
+      - name: Build & Push sulej.ch:build
         run: |
           IMAGE_NAME="sulej.ch"
-          VERSION=$(git describe --tags --abbrev=0)
+          BUILD_TAG="build"
 
           docker buildx create --use
 
-          docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7,linux/arm/v6 \
+          docker buildx build --platform linux/amd64 -f Dockerfile.build \
+            -t ghcr.io/${{ secrets.GH_USERNAME }}/${IMAGE_NAME}:${BUILD_TAG}-latest \
+            -t ghcr.io/${{ secrets.GH_USERNAME }}/${IMAGE_NAME}:${BUILD_TAG}-${VERSION} \
+            --push --provenance=false .
+
+      - name: Build & Push sulej.ch
+        run: |
+          IMAGE_NAME="sulej.ch"
+          BUILD_TAG="build"
+
+          docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7,linux/arm/v6,linux/386,linux/ppc64le,linux/riscv64,linux/s390x \
+            --build-arg BUILD_IMAGE="ghcr.io/${{ secrets.GH_USERNAME }}/${IMAGE_NAME}:${BUILD_TAG}-latest" \
             -t ghcr.io/${{ secrets.GH_USERNAME }}/${IMAGE_NAME}:latest \
             -t ghcr.io/${{ secrets.GH_USERNAME }}/${IMAGE_NAME}:${VERSION} \
-            --push .
+            --push --provenance=false .
