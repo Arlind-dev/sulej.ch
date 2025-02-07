@@ -10,7 +10,9 @@ Welcome to the official repository of [sulej.ch](https://sulej.ch/), my personal
 
 ## Usage
 
-There is a Docker image that's ready to use at any time. You can run it using Docker Compose or Docker Run. You can add any of the tags available in this repository to rollback to a previous version (e.g., :v0.1.0).
+A **pre-built, ready-to-use** Docker image is available and supports **multiple CPU architectures**, including **x86 (amd64), ARM (arm64, arm/v7, arm/v6), RISC-V, PowerPC (ppc64le), and IBM Z (s390x)**.  
+
+You can run it seamlessly using **Docker Compose** or **Docker Run**. If needed, you can **rollback to a previous version** by specifying a tag from this repository (e.g., `:v0.1.0`).  
 
 ### Docker Compose
 
