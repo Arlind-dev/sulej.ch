@@ -1,20 +1,28 @@
-# sulej.ch
+# sulej.ch  
 
-Welcome to the official repository of [sulej.ch](https://sulej.ch/), my personal website.
+Welcome to the official repository of **[sulej.ch](https://sulej.ch/)**, my personal website.
 
-## Requirements
+---
 
-- **[Node](https://nodejs.org/en):** Version 20 LTS or higher
-- **[pnpm](https://pnpm.io/):** Version 9.12.2 or higher
-- **[Docker](https://www.docker.com/):** (Optional) Required only if you plan to use the provided Docker image, to run the static website.
+## 📌 Requirements  
 
-## Usage
+Ensure you have the following installed before running the project:  
 
-A **pre-built, ready-to-use** Docker image is available and supports **multiple CPU architectures**, including **x86 (amd64), ARM (arm64, arm/v7, arm/v6), RISC-V, PowerPC (ppc64le), and IBM Z (s390x)**.  
+- **[Node.js](https://nodejs.org/en)** → Version **20 LTS** or higher  
+- **[pnpm](https://pnpm.io/)** → Version **9.12.2** or higher  
+- **[Docker](https://www.docker.com/)** _(Optional)_ → Required if deploying via Docker  
 
-You can run it seamlessly using **Docker Compose** or **Docker Run**. If needed, you can **rollback to a previous version** by specifying a tag from this repository (e.g., `:v0.1.0`).  
+---
 
-### Docker Compose
+## 🚀 Usage  
+
+A **pre-built, ready-to-use Docker image** is available, supporting multiple CPU architectures:  
+
+- **x86 (amd64)**, **ARM (arm64, arm/v7, arm/v6)**, **RISC-V**, **PowerPC (ppc64le)**, **IBM Z (s390x)**  
+
+You can run it via **Docker Compose** or **Docker Run**. To use a previous version, specify a tag (e.g., `:v0.1.0`).  
+
+### 🔹 Docker Compose  
 
 ```yml
 services:
@@ -32,7 +40,7 @@ networks:
     name: sulej.ch
 ```
 
-### Docker Run
+### 🔹 Docker Run  
 
 ```bash
 docker run -d \
@@ -42,66 +50,163 @@ docker run -d \
   ghcr.io/arlind-dev/sulej.ch:latest
 ```
 
-### Access Pinned GitHub Repositories
+---
 
-I deployed a tool called [gh-pinned-repos](https://github.com/Arlind-dev/gh-pinned-repos) that scrapes your pinned GitHub repositories (works only with public profiles). This tool is a fork, and you can either host it yourself or use the existing deployment.
+## 📌 Accessing Pinned GitHub Repositories  
 
-To change the repository link, edit the file located at [/src/components/organisms/Repos.svelte](https://github.com/Arlind-dev/sulej.ch/blob/main/src/components/organisms/Repos.svelte#L28).
+This project uses **[gh-pinned-repos](https://github.com/Arlind-dev/gh-pinned-repos)** to scrape pinned repositories _(only works with public profiles)_.  
 
-## Running the Project
+To modify the repository link, edit:  
 
-To run the project locally, follow these steps:
+📂 [`/src/components/organisms/Repos.svelte`](https://github.com/Arlind-dev/sulej.ch/blob/main/src/components/organisms/Repos.svelte#L28)  
 
-1. **Clone the repository:**
+---
 
-   ```bash
-   git clone https://github.com/Arlind-dev/sulej.ch.git
-   ```
+## 🛠 Running the Project  
 
-2. **Install the dependencies:**
+To run the project **locally**, follow these steps:  
 
-   ```bash
-   pnpm install
-   ```
+1️⃣ **Clone the repository**  
 
-3. **Start the development server:**
+```bash
+git clone https://github.com/Arlind-dev/sulej.ch.git
+```
 
-   ```bash
-   pnpm run dev
-   ```
+2️⃣ **Install dependencies**  
 
-4. **Access the application:**
+```bash
+pnpm install
+```
 
-   Open your web browser and navigate to `http://localhost:5173`.
+3️⃣ **Start the development server**  
 
-## Building the Project
+```bash
+pnpm run dev
+```
 
-To build the project for production, follow these steps:
+4️⃣ **Access the application**  
 
-1. **Create a production build:**
+- Open: `http://localhost:5173`
 
-   ```bash
-   pnpm run build
-   ```
+---
 
-   This command will generate the optimized build files in the `/build` directory.
+## 📦 Building the Project  
 
-2. **Test the production build:**
+You can build the project **manually** or **using Docker**.  
 
-   ```bash
-   pnpm run preview
-   ```
+### 🔹 Build Manually  
 
-3. **Access the application:**
+1️⃣ **Generate a production build**  
 
-   Open your web browser and navigate to `http://localhost:4173`.
+```bash
+pnpm run build
+```
 
-## Contributions
+- The optimized build files will be stored in the `/build` directory.  
 
-Contributions to this project are welcome and greatly appreciated. If you find any bugs, please create an issue or a pull request on the project's GitHub repository.
+2️⃣ **Test the production build**  
 
-Feel free to fork this repository and modify it to fit your needs. If you do so, please credit [the original repository](https://github.com/xafn/afn.im).
+```bash
+pnpm run preview
+```
 
-## Contributors
+3️⃣ **Access the application**  
 
-@MaximilianKos: v0.2.0, v0.4.0
+- Open: `http://localhost:4173`
+
+---
+
+## 🚢 Deploying the Project  
+
+You can deploy this project using **Docker** or **Cloudflare Pages & Workers**.  
+
+---
+
+## 🐳 Deploying with Docker  
+
+### 🔹 Steps  
+
+1️⃣ **Fork the repository**  
+- Fork this repository to your **GitHub account**.  
+- Enable **GitHub Actions**.  
+
+2️⃣ **Add GitHub Repository Secrets**  
+- Navigate to **GitHub → Settings → Secrets and Variables → Actions**.  
+- Add the following secrets:  
+
+| Name          | Description                                  |
+| ------------- | -------------------------------------------- |
+| `GH_TOKEN`    | Your GitHub token _(read/write permissions)_ |
+| `GH_USERNAME` | Your GitHub username                         |
+
+3️⃣ **Modify the GitHub Workflow**  
+- Open `.github/workflows/main.yml` and update it to use **your** Docker image name.  
+
+4️⃣ **Tag a New Release**  
+
+```bash
+git tag vX.X.X
+```
+
+_(Replace `vX.X.X` with the actual version number.)_  
+
+5️⃣ **Push the Tag to GitHub**  
+
+```bash
+git push --tags
+```
+
+- This triggers **GitHub Actions** to build & push the Docker image.  
+
+---
+
+## ☁ Deploying to Cloudflare Pages  
+
+### 🔹 Steps  
+
+1️⃣ **Fork the Repository**  
+- Fork this repository to your **GitHub account**.  
+
+2️⃣ **Create a Cloudflare Worker & Pages Project**  
+- Log in to **[Cloudflare](https://dash.cloudflare.com/)**.  
+- Create a **new Pages project** and connect it to your **forked GitHub repository**.  
+
+3️⃣ **Set Environment Variables**  
+- In **Cloudflare Pages → Settings → Environment Variables**, add:  
+
+| Variable       | Value |
+| -------------- | ----- |
+| `NODE_VERSION` | `20`  |
+
+4️⃣ **Configure Build Settings**  
+- In **Build & Deploy settings**:  
+
+| Setting              | Value                            |
+| -------------------- | -------------------------------- |
+| **Framework preset** | `None`                           |
+| **Build command**    | `pnpm install && pnpm run build` |
+| **Output directory** | `/build`                         |
+
+5️⃣ **Deploy**  
+- Once connected, Cloudflare will **automatically deploy** the latest changes.  
+
+---
+
+## 💡 Contributions  
+
+Contributions are welcome! 🚀  
+
+- If you find **bugs**, **submit an issue** or **create a pull request**.  
+- Feel free to **fork this repository** and modify it to fit your needs.  
+- If you do, please **credit** the original repository:  
+  **[xafn/afn.im](https://github.com/xafn/afn.im)**  
+
+---
+
+## 🎉 Contributors  
+
+Shoutout to everyone contributing to this project!  
+
+| Contributor        | Versions Contributed |
+| ------------------ | -------------------- |
+| **@MaximilianKos** | `v0.2.0`, `v0.4.0`   |
