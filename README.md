@@ -105,7 +105,3 @@ Feel free to fork this repository and modify it to fit your needs. If you do so,
 ## Contributors
 
 @MaximilianKos: v0.2.0, v0.4.0
-
-## License
-
-This project is licensed under the MIT License.
