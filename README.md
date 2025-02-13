@@ -92,10 +92,6 @@ pnpm run dev
 
 ## 📦 Building the Project  
 
-You can build the project **manually** or **using Docker**.  
-
-### 🔹 Build Manually  
-
 1️⃣ **Generate a production build**  
 
 ```bash
@@ -122,9 +118,9 @@ You can deploy this project using **Docker** or **Cloudflare Pages & Workers**.
 
 ---
 
-## 🐳 Deploying with Docker  
+### 🐳 Deploying with Docker  
 
-### 🔹 Steps  
+#### 🔹 Steps  
 
 1️⃣ **Fork the repository**  
 - Fork this repository to your **GitHub account**.  
@@ -160,9 +156,9 @@ git push --tags
 
 ---
 
-## ☁ Deploying to Cloudflare Pages  
+### ☁ Deploying to Cloudflare Pages  
 
-### 🔹 Steps  
+#### 🔹 Steps  
 
 1️⃣ **Fork the Repository**  
 - Fork this repository to your **GitHub account**.  
@@ -198,8 +194,7 @@ Contributions are welcome! 🚀
 
 - If you find **bugs**, **submit an issue** or **create a pull request**.  
 - Feel free to **fork this repository** and modify it to fit your needs.  
-- If you do, please **credit** the original repository:  
-  **[xafn/afn.im](https://github.com/xafn/afn.im)**  
+- If you do, please **credit** the original repository: **[xafn/afn.im](https://github.com/xafn/afn.im)**  
 
 ---
 
