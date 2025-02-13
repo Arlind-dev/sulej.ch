@@ -126,19 +126,23 @@ You can deploy this project using **Docker** or **Cloudflare Pages & Workers**.
 - Fork this repository to your **GitHub account**.  
 - Enable **GitHub Actions**.  
 
-2️⃣ **Add GitHub Repository Secrets**  
+2️⃣ **Add GitHub Repository Secrets and Variables**  
+
 - Navigate to **GitHub → Settings → Secrets and Variables → Actions**.  
-- Add the following secrets:  
+- Add the following **secrets**:  
 
 | Name          | Description                                  |
 | ------------- | -------------------------------------------- |
 | `GH_TOKEN`    | Your GitHub token _(read/write permissions)_ |
 | `GH_USERNAME` | Your GitHub username                         |
 
-3️⃣ **Modify the GitHub Workflow**  
-- Open `.github/workflows/main.yml` and update it to use **your** Docker image name.  
+- Add the following **repository variable**:  
 
-4️⃣ **Tag a New Release**  
+| Name         | Description                                 |
+| ------------ | ------------------------------------------- |
+| `IMAGE_NAME` | Your desired Docker image name (`sulej.ch`) |
+
+3️⃣ **Tag a New Release**  
 
 ```bash
 git tag vX.X.X
@@ -146,7 +150,7 @@ git tag vX.X.X
 
 _(Replace `vX.X.X` with the actual version number.)_  
 
-5️⃣ **Push the Tag to GitHub**  
+4️⃣ **Push the Tag to GitHub**  
 
 ```bash
 git push --tags

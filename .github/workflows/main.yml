@@ -24,23 +24,19 @@ jobs:
 
       - name: Build & Push sulej.ch:build
         run: |
-          IMAGE_NAME="sulej.ch"
-          BUILD_TAG="build"
 
           docker buildx create --use
 
           docker buildx build --platform linux/amd64 -f Dockerfile.build \
-            -t ghcr.io/${{ secrets.GH_USERNAME }}/${IMAGE_NAME}:${BUILD_TAG}-latest \
-            -t ghcr.io/${{ secrets.GH_USERNAME }}/${IMAGE_NAME}:${BUILD_TAG}-${VERSION} \
+            -t ghcr.io/${{ secrets.GH_USERNAME }}/${{ vars.IMAGE_NAME }}:build-latest \
+            -t ghcr.io/${{ secrets.GH_USERNAME }}/${{ vars.IMAGE_NAME }}:build-${VERSION} \
             --push --provenance=false .
 
       - name: Build & Push sulej.ch
         run: |
-          IMAGE_NAME="sulej.ch"
-          BUILD_TAG="build"
 
           docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7,linux/arm/v6,linux/386,linux/ppc64le,linux/riscv64,linux/s390x \
-            --build-arg BUILD_IMAGE="ghcr.io/${{ secrets.GH_USERNAME }}/${IMAGE_NAME}:${BUILD_TAG}-latest" \
-            -t ghcr.io/${{ secrets.GH_USERNAME }}/${IMAGE_NAME}:latest \
-            -t ghcr.io/${{ secrets.GH_USERNAME }}/${IMAGE_NAME}:${VERSION} \
+            --build-arg BUILD_IMAGE="ghcr.io/${{ secrets.GH_USERNAME }}/${{ vars.IMAGE_NAME }}:build-latest" \
+            -t ghcr.io/${{ secrets.GH_USERNAME }}/${{ vars.IMAGE_NAME }}:latest \
+            -t ghcr.io/${{ secrets.GH_USERNAME }}/${{ vars.IMAGE_NAME }}:${VERSION} \
             --push --provenance=false .
