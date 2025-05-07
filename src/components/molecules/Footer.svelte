@@ -11,7 +11,7 @@
       ><a
         href="https://github.com/Arlind-dev/sulej.ch"
         target="_blank"
-        rel="noreferrer">v0.6.6</a
+        rel="noreferrer">v0.6.7</a
       ></Tooltip
     >
   </h6>
