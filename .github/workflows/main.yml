@@ -1,0 +1,100 @@
+name: Release & Deploy Docker
+
+on:
+  push:
+    branches:
+      - '**'
+
+permissions:
+  contents: write
+  packages: write
+  id-token: write
+
+jobs:
+  release:
+    runs-on: ubuntu-24.04
+    if: github.ref == 'refs/heads/main'
+
+    outputs:
+      new_release_published: ${{ steps.semantic.outputs.new_release_published }}
+      new_release_version: ${{ steps.semantic.outputs.new_release_version }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Run semantic-release
+        id: semantic
+        uses: cycjimmy/semantic-release-action@v5
+        with:
+          extra_plugins: |
+            @semantic-release/changelog
+            @semantic-release/git
+            @semantic-release/github
+            @semantic-release/commit-analyzer
+            @semantic-release/release-notes-generator
+            conventional-changelog-conventionalcommits
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  docker:
+    runs-on: ubuntu-24.04
+    needs: release
+    if: github.ref == 'refs/heads/main' && needs.release.outputs.new_release_published == 'true'
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Normalize repository owner to lowercase
+        run: echo "OWNER_LC=${GITHUB_REPOSITORY_OWNER,,}" >> $GITHUB_ENV
+
+      - name: Build and push build-stage image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: Dockerfile.build
+          platforms: linux/amd64
+          push: true
+          provenance: false
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+          tags: |
+            ghcr.io/${{ env.OWNER_LC }}/${{ vars.IMAGE_NAME }}:build-latest
+            ghcr.io/${{ env.OWNER_LC }}/${{ vars.IMAGE_NAME }}:build-${{ needs.release.outputs.new_release_version }}
+
+      - name: Build and push main image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          platforms: linux/amd64,linux/arm64,linux/arm/v7,linux/arm/v6,linux/386,linux/ppc64le,linux/riscv64,linux/s390x
+          push: true
+          provenance: false
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+          build-args: |
+            BUILD_IMAGE=ghcr.io/${{ env.OWNER_LC }}/${{ vars.IMAGE_NAME }}:build-latest
+          tags: |
+            ghcr.io/${{ env.OWNER_LC }}/${{ vars.IMAGE_NAME }}:latest
+            ghcr.io/${{ env.OWNER_LC }}/${{ vars.IMAGE_NAME }}:${{ needs.release.outputs.new_release_version }}
+
+  deploy:
+    runs-on: ubuntu-24.04
+    needs: release
+    if: always()
+    steps:
+      - name: Trigger Cloudflare Pages deploy
+        run: |
+          curl -X POST "${{ secrets.CF_DEPLOY_HOOK_URL }}"
