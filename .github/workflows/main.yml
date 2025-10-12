@@ -1,4 +1,4 @@
-name: Release & Deploy Docker
+name: Semantic Release, Build & Deploy
 
 on:
   push:
