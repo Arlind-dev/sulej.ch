@@ -1,0 +1,13 @@
+services:
+  sulej.ch:
+    image: ghcr.io/arlind-dev/sulej.ch:latest
+    container_name: sulej.ch
+    restart: unless-stopped
+    ports:
+      - 8080:80
+    networks:
+      - sulej.ch
+
+networks:
+  sulej.ch:
+    name: sulej.ch
