@@ -1,10 +1,5 @@
 ## 1.0.0 (2025-10-12)
 
-### ⚠ BREAKING CHANGES
-
-* **ci:** add signed commits
-* Create sulej.ch
-
 ### Features
 
 * Create sulej.ch ([9814ab8](https://github.com/Arlind-dev/sulej.ch/commit/9814ab83122785f7baefba7da27c9871b926e7e6))
