@@ -1,3 +1,9 @@
+## [1.0.1](https://github.com/Arlind-dev/sulej.ch/compare/v1.0.0...v1.0.1) (2025-10-13)
+
+### Bug Fixes
+
+* **docker:** add description labels for docker images ([#9](https://github.com/Arlind-dev/sulej.ch/issues/9)) ([136cd22](https://github.com/Arlind-dev/sulej.ch/commit/136cd2240b06d5cd9c4b203a95dd4766bf625b91))
+
 ## 1.0.0 (2025-10-12)
 
 ### Features
