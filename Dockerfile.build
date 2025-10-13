@@ -1,5 +1,7 @@
 FROM node:alpine AS build
 
+LABEL org.opencontainers.image.description="Static build of sulej.ch"
+
 WORKDIR /app
 
 RUN corepack enable && corepack prepare pnpm@latest --activate

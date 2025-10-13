@@ -113,6 +113,7 @@ jobs:
           tags: |
             ghcr.io/${{ env.OWNER_LC }}/${{ vars.IMAGE_NAME }}:latest
             ghcr.io/${{ env.OWNER_LC }}/${{ vars.IMAGE_NAME }}:${{ needs.release.outputs.new_release_version }}
+          annotations: "org.opencontainers.image.description=Multi-Arch image running a static sulej.ch in nginx"
 
   deploy:
     runs-on: ubuntu-24.04
