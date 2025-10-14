@@ -63,6 +63,7 @@ jobs:
           GIT_COMMITTER_NAME: semantic-release-bot
           GIT_AUTHOR_EMAIL: arlind@sulej.ch
           GIT_COMMITTER_EMAIL: arlind@sulej.ch
+
   docker:
     runs-on: ubuntu-24.04
     needs: release
@@ -113,7 +114,8 @@ jobs:
           tags: |
             ghcr.io/${{ env.OWNER_LC }}/${{ vars.IMAGE_NAME }}:latest
             ghcr.io/${{ env.OWNER_LC }}/${{ vars.IMAGE_NAME }}:${{ needs.release.outputs.new_release_version }}
-          annotations: "org.opencontainers.image.description=Multi-Arch image running a static sulej.ch in nginx"
+          annotations: |
+            org.opencontainers.image.description=Multi-Arch image running a static sulej.ch in nginx
 
   deploy:
     runs-on: ubuntu-24.04
