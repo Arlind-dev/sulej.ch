@@ -117,7 +117,7 @@ jobs:
   deploy:
     runs-on: ubuntu-24.04
     needs: release
-    if: always()
+    if: github.ref == 'refs/heads/main' && needs.release.outputs.new_release_published == 'true'
     steps:
       - name: Trigger Cloudflare Pages deploy
         run: |
