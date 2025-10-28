@@ -1,3 +1,9 @@
+## [1.1.0](https://github.com/Arlind-dev/sulej.ch/compare/v1.0.1...v1.1.0) (2025-10-28)
+
+### Features
+
+* **ui:** add new favicon ([6bfb562](https://github.com/Arlind-dev/sulej.ch/commit/6bfb56264c3752e35369ac167c0149f8a7ca75c6))
+
 ## [1.0.1](https://github.com/Arlind-dev/sulej.ch/compare/v1.0.0...v1.0.1) (2025-10-17)
 
 ### Bug Fixes
