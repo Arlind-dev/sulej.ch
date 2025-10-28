@@ -1,15 +1,22 @@
 <script lang="ts">
   import type { VersionInfo } from "./version";
+  import { site, currentYear } from "./site.config";
   export let versionInfo: VersionInfo;
 </script>
 
 <footer>
   <div style="display: inline-flex; align-items: baseline; gap: 1rem; margin: 1rem 0 0;">
-    <small>© 2025 sulej.ch</small>
+    <small>© {currentYear} {site.domain}</small>
     <small>
-      <a class="version-link" href="https://github.com/Arlind-dev/sulej.ch">
-        {versionInfo.version} <span class="commit">({versionInfo.commit})</span>
-      </a>
+      {#if site.githubRepo}
+        <a class="version-link" href={site.githubRepo}>
+          {versionInfo.version} <span class="commit">({versionInfo.commit})</span>
+        </a>
+      {:else}
+        <span class="version-link" aria-label="App version">
+          {versionInfo.version} <span class="commit">({versionInfo.commit})</span>
+        </span>
+      {/if}
     </small>
   </div>
 </footer>
