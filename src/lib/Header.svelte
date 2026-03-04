@@ -1,6 +1,6 @@
 <script lang="ts">
   import { site } from "./site.config";
-  const title = `About ${site.siteTitle}`;
+  const title = `${site.siteTitle}`;
   // Keep markup minimal and data-driven via config
 </script>
 
