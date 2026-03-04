@@ -1,3 +1,9 @@
+## [1.2.0](https://github.com/Arlind-dev/sulej.ch/compare/v1.1.0...v1.2.0) (2026-03-04)
+
+### Features
+
+* **theme:** add Catppuccin Mocha/Latte themes with toggle ([#143](https://github.com/Arlind-dev/sulej.ch/issues/143)) ([b7d15a9](https://github.com/Arlind-dev/sulej.ch/commit/b7d15a97c4b6f2b3b9580cb7b07c60c4ea1ebb56))
+
 ## [1.1.0](https://github.com/Arlind-dev/sulej.ch/compare/v1.0.1...v1.1.0) (2025-10-28)
 
 ### Features
