@@ -1,3 +1,9 @@
+## [1.2.1](https://github.com/Arlind-dev/sulej.ch/compare/v1.2.0...v1.2.1) (2026-03-04)
+
+### Bug Fixes
+
+* **ci:** add permissions to comment on issues and pull requests ([e26b5e8](https://github.com/Arlind-dev/sulej.ch/commit/e26b5e8ad99d495aa674ae1823ef9251d010dfc6))
+
 ## [1.2.0](https://github.com/Arlind-dev/sulej.ch/compare/v1.1.0...v1.2.0) (2026-03-04)
 
 ### Features
