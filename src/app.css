@@ -1,10 +1,101 @@
+/* ── Catppuccin Mocha (dark, default) ───────────────────────── */
+:root,
+[data-theme="mocha"] {
+  --ctp-base:      #1e1e2e;
+  --ctp-mantle:    #181825;
+  --ctp-crust:     #11111b;
+  --ctp-surface0:  #313244;
+  --ctp-surface1:  #45475a;
+  --ctp-surface2:  #585b70;
+  --ctp-overlay0:  #6c7086;
+  --ctp-overlay1:  #7f849c;
+  --ctp-overlay2:  #9399b2;
+  --ctp-subtext0:  #a6adc8;
+  --ctp-subtext1:  #bac2de;
+  --ctp-text:      #cdd6f4;
+  --ctp-lavender:  #b4befe;
+  --ctp-blue:      #89b4fa;
+  --ctp-sapphire:  #74c7ec;
+  --ctp-sky:       #89dceb;
+  --ctp-teal:      #94e2d5;
+  --ctp-green:     #a6e3a1;
+  --ctp-yellow:    #f9e2af;
+  --ctp-peach:     #fab387;
+  --ctp-maroon:    #eba0ac;
+  --ctp-red:       #f38ba8;
+  --ctp-mauve:     #cba6f7;
+  --ctp-pink:      #f5c2e7;
+  --ctp-flamingo:  #f2cdcd;
+  --ctp-rosewater: #f5e0dc;
+
+  --color-bg:       var(--ctp-base);
+  --color-surface:  var(--ctp-surface0);
+  --color-border:   var(--ctp-surface1);
+  --color-text:     var(--ctp-text);
+  --color-subtext:  var(--ctp-subtext0);
+  --color-accent:   var(--ctp-mauve);
+  --color-link:     var(--ctp-blue);
+  --color-link-hover: var(--ctp-lavender);
+}
+
+/* ── Catppuccin Latte (light) ───────────────────────────────── */
+[data-theme="latte"] {
+  --ctp-base:      #eff1f5;
+  --ctp-mantle:    #e6e9ef;
+  --ctp-crust:     #dce0e8;
+  --ctp-surface0:  #ccd0da;
+  --ctp-surface1:  #bcc0cc;
+  --ctp-surface2:  #acb0be;
+  --ctp-overlay0:  #9ca0b0;
+  --ctp-overlay1:  #8c8fa1;
+  --ctp-overlay2:  #7c7f93;
+  --ctp-subtext0:  #6c6f85;
+  --ctp-subtext1:  #5c5f77;
+  --ctp-text:      #4c4f69;
+  --ctp-lavender:  #7287fd;
+  --ctp-blue:      #1e66f5;
+  --ctp-sapphire:  #209fb5;
+  --ctp-sky:       #04a5e5;
+  --ctp-teal:      #179299;
+  --ctp-green:     #40a02b;
+  --ctp-yellow:    #df8e1d;
+  --ctp-peach:     #fe640b;
+  --ctp-maroon:    #e64553;
+  --ctp-red:       #d20f39;
+  --ctp-mauve:     #8839ef;
+  --ctp-pink:      #ea76cb;
+  --ctp-flamingo:  #dd7878;
+  --ctp-rosewater: #dc8a78;
+
+  --color-bg:       var(--ctp-base);
+  --color-surface:  var(--ctp-surface0);
+  --color-border:   var(--ctp-surface1);
+  --color-text:     var(--ctp-text);
+  --color-subtext:  var(--ctp-subtext0);
+  --color-accent:   var(--ctp-mauve);
+  --color-link:     var(--ctp-blue);
+  --color-link-hover: var(--ctp-lavender);
+}
+
 html, body {
   height: 100%;
   margin: 0;
   overflow: hidden;
   font-family: 'JetBrains Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  transition: background-color 200ms ease, color 200ms ease;
 }
 
 :root {
   --font-mono: 'JetBrains Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+}
+
+a {
+  color: var(--color-link);
+  transition: color 120ms ease;
+}
+
+a:hover {
+  color: var(--color-link-hover);
 }
