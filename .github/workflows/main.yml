@@ -98,7 +98,7 @@ jobs:
       
 
       - name: Build and push build-stage image
-        uses: docker/build-push-action@v6
+        uses: docker/build-push-action@v7
         with:
           context: .
           file: Dockerfile.build
@@ -114,7 +114,7 @@ jobs:
             ghcr.io/${{ steps.meta.outputs.owner_lc }}/${{ vars.IMAGE_NAME }}:build-${{ needs.release.outputs.new_release_version }}
 
       - name: Build and push main image
-        uses: docker/build-push-action@v6
+        uses: docker/build-push-action@v7
         with:
           context: .
           file: Dockerfile
@@ -167,7 +167,7 @@ jobs:
       
 
       - name: Build and push build-stage image
-        uses: docker/build-push-action@v6
+        uses: docker/build-push-action@v7
         with:
           context: .
           file: Dockerfile.build
@@ -182,7 +182,7 @@ jobs:
             ghcr.io/${{ steps.meta.outputs.owner_lc }}/${{ vars.IMAGE_NAME }}:build-${{ steps.meta.outputs.sanitized_branch }}-${{ steps.meta.outputs.sha_short }}
 
       - name: Build and push main image
-        uses: docker/build-push-action@v6
+        uses: docker/build-push-action@v7
         with:
           context: .
           file: Dockerfile
