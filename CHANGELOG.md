@@ -1,3 +1,10 @@
+## [1.3.0](https://github.com/Arlind-dev/sulej.ch/compare/v1.2.1...v1.3.0) (2026-07-07)
+
+### Features
+
+* add PGP key page with WKD auto-discovery ([fe2681c](https://github.com/Arlind-dev/sulej.ch/commit/fe2681cf1e8b696aa2a4e571bea3dca405a9e396))
+* rebuild the site as a personal landing page ([4c940bd](https://github.com/Arlind-dev/sulej.ch/commit/4c940bd00b57139c673acb7e729ce7142005903e))
+
 ## [1.2.1](https://github.com/Arlind-dev/sulej.ch/compare/v1.2.0...v1.2.1) (2026-03-04)
 
 ### Bug Fixes
