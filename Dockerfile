@@ -1,12 +1,5 @@
-ARG BUILD_IMAGE=ghcr.io/arlind-dev/sulej.ch:build-latest
-FROM --platform=$BUILDPLATFORM ${BUILD_IMAGE} AS build
+FROM nginx:alpine
 
-FROM nginx:1.29.3-alpine3.22
-
-ARG BUILD_IMAGE
-
-WORKDIR /usr/share/nginx/html
-COPY --from=build /output ./
-
-EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
+COPY build /usr/share/nginx/html
+RUN printf 'server {\n    listen 80;\n    root /usr/share/nginx/html;\n    index index.html;\n    location / {\n        try_files $uri $uri/ /index.html;\n    }\n}\n' \
+    > /etc/nginx/conf.d/default.conf
