@@ -1,0 +1,3 @@
+# Web Key Directory (WKD): allow cross-origin fetches of the key.
+/.well-known/openpgpkey/*
+  Access-Control-Allow-Origin: *
