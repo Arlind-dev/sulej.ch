@@ -18,8 +18,5 @@ function getInitialTheme(): Theme {
 export const theme = writable<Theme>(getInitialTheme());
 
 if (browser) {
-  theme.subscribe((value) => {
-    localStorage.setItem(STORAGE_KEY, value);
-    document.documentElement.setAttribute('data-theme', value);
-  });
+  theme.subscribe((value) => localStorage.setItem(STORAGE_KEY, value));
 }

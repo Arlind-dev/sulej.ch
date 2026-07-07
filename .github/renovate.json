@@ -1,0 +1,46 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended"],
+  "baseBranchPatterns": [
+    "next"
+  ],
+  "schedule": ["before 6am on monday"],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "managerFilePatterns": [".github/workflows/release.yml"],
+      "matchStrings": [
+        "(?<depName>@semantic-release/[a-z-]+)@(?<currentValue>\\d+\\.\\d+\\.\\d+)",
+        "(?<depName>conventional-changelog-conventionalcommits)@(?<currentValue>\\d+\\.\\d+\\.\\d+)"
+      ],
+      "datasourceTemplate": "npm"
+    },
+    {
+      "customType": "regex",
+      "managerFilePatterns": [".github/workflows/release.yml"],
+      "matchStrings": ["semantic_version:\\s*[\"']?(?<currentValue>\\d+\\.\\d+\\.\\d+)"],
+      "depNameTemplate": "semantic-release",
+      "datasourceTemplate": "npm"
+    },
+    {
+      "customType": "regex",
+      "managerFilePatterns": [".github/workflows/release.yml"],
+      "matchStrings": ["github:(?<depName>Arlind-dev/verified-git-commit)#(?<currentValue>v\\d+\\.\\d+\\.\\d+)"],
+      "datasourceTemplate": "github-tags"
+    }
+  ],
+  "packageRules": [
+    {
+      "groupName": "all dependencies",
+      "groupSlug": "all-deps",
+      "matchPackageNames": [
+        "*"
+      ]
+    },
+    {
+      "description": "Hold conventionalcommits on 9.x until release-notes-generator supports v10 (writer@9): https://github.com/semantic-release/release-notes-generator/issues/992",
+      "matchPackageNames": ["conventional-changelog-conventionalcommits"],
+      "allowedVersions": "<10"
+    }
+  ]
+}
