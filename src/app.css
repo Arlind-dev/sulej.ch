@@ -1,101 +1,98 @@
-/* ── Catppuccin Mocha (dark, default) ───────────────────────── */
+@import 'tailwindcss';
+
+/*
+ * Catppuccin token layer. Light = Latte (leaning white), dark = Mocha.
+ * One accent (blue); grays stay quiet. Tokens switch at runtime with
+ * [data-theme] and are mapped onto Tailwind utilities via @theme inline below.
+ */
 :root,
-[data-theme="mocha"] {
-  --ctp-base:      #1e1e2e;
-  --ctp-mantle:    #181825;
-  --ctp-crust:     #11111b;
-  --ctp-surface0:  #313244;
-  --ctp-surface1:  #45475a;
-  --ctp-surface2:  #585b70;
-  --ctp-overlay0:  #6c7086;
-  --ctp-overlay1:  #7f849c;
-  --ctp-overlay2:  #9399b2;
-  --ctp-subtext0:  #a6adc8;
-  --ctp-subtext1:  #bac2de;
-  --ctp-text:      #cdd6f4;
-  --ctp-lavender:  #b4befe;
-  --ctp-blue:      #89b4fa;
-  --ctp-sapphire:  #74c7ec;
-  --ctp-sky:       #89dceb;
-  --ctp-teal:      #94e2d5;
-  --ctp-green:     #a6e3a1;
-  --ctp-yellow:    #f9e2af;
-  --ctp-peach:     #fab387;
-  --ctp-maroon:    #eba0ac;
-  --ctp-red:       #f38ba8;
-  --ctp-mauve:     #cba6f7;
-  --ctp-pink:      #f5c2e7;
-  --ctp-flamingo:  #f2cdcd;
-  --ctp-rosewater: #f5e0dc;
+[data-theme='latte'] {
+  --page: #ffffff;
+  --surface: #f3f5f9;
+  --surface-2: #e9ecf2;
+  --line: #e0e3eb;
+  --text: #4c4f69;
+  --muted: #6c6f85;
+  --faint: #8c8fa1;
+  --accent: #1e66f5;
+  --accent-hover: #1552d8;
+  --accent-contrast: #ffffff;
+  --accent-soft: #e6edff;
+  --focus: #1e66f5;
 
-  --color-bg:       var(--ctp-base);
-  --color-surface:  var(--ctp-surface0);
-  --color-border:   var(--ctp-surface1);
-  --color-text:     var(--ctp-text);
-  --color-subtext:  var(--ctp-subtext0);
-  --color-accent:   var(--ctp-mauve);
-  --color-link:     var(--ctp-blue);
-  --color-link-hover: var(--ctp-lavender);
+  color-scheme: light;
 }
 
-/* ── Catppuccin Latte (light) ───────────────────────────────── */
-[data-theme="latte"] {
-  --ctp-base:      #eff1f5;
-  --ctp-mantle:    #e6e9ef;
-  --ctp-crust:     #dce0e8;
-  --ctp-surface0:  #ccd0da;
-  --ctp-surface1:  #bcc0cc;
-  --ctp-surface2:  #acb0be;
-  --ctp-overlay0:  #9ca0b0;
-  --ctp-overlay1:  #8c8fa1;
-  --ctp-overlay2:  #7c7f93;
-  --ctp-subtext0:  #6c6f85;
-  --ctp-subtext1:  #5c5f77;
-  --ctp-text:      #4c4f69;
-  --ctp-lavender:  #7287fd;
-  --ctp-blue:      #1e66f5;
-  --ctp-sapphire:  #209fb5;
-  --ctp-sky:       #04a5e5;
-  --ctp-teal:      #179299;
-  --ctp-green:     #40a02b;
-  --ctp-yellow:    #df8e1d;
-  --ctp-peach:     #fe640b;
-  --ctp-maroon:    #e64553;
-  --ctp-red:       #d20f39;
-  --ctp-mauve:     #8839ef;
-  --ctp-pink:      #ea76cb;
-  --ctp-flamingo:  #dd7878;
-  --ctp-rosewater: #dc8a78;
+[data-theme='mocha'] {
+  --page: #1e1e2e;
+  --surface: #181825;
+  --surface-2: #313244;
+  --line: #313244;
+  --text: #cdd6f4;
+  --muted: #a6adc8;
+  --faint: #7f849c;
+  --accent: #89b4fa;
+  --accent-hover: #a5c4fc;
+  --accent-contrast: #11111b;
+  --accent-soft: #28304a;
+  --focus: #89b4fa;
 
-  --color-bg:       var(--ctp-base);
-  --color-surface:  var(--ctp-surface0);
-  --color-border:   var(--ctp-surface1);
-  --color-text:     var(--ctp-text);
-  --color-subtext:  var(--ctp-subtext0);
-  --color-accent:   var(--ctp-mauve);
-  --color-link:     var(--ctp-blue);
-  --color-link-hover: var(--ctp-lavender);
+  color-scheme: dark;
 }
 
-html, body {
-  height: 100%;
-  margin: 0;
-  overflow: hidden;
-  font-family: 'JetBrains Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
-  background-color: var(--color-bg);
-  color: var(--color-text);
-  transition: background-color 200ms ease, color 200ms ease;
+@theme inline {
+  --color-page: var(--page);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-line: var(--line);
+  --color-text: var(--text);
+  --color-muted: var(--muted);
+  --color-faint: var(--faint);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-contrast: var(--accent-contrast);
+  --color-accent-soft: var(--accent-soft);
+
+  --font-sans:
+    ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
 }
 
-:root {
-  --font-mono: 'JetBrains Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+html {
+  background: var(--page);
+  color: var(--text);
+  font-family: var(--font-sans);
+  -webkit-text-size-adjust: 100%;
 }
 
-a {
-  color: var(--color-link);
-  transition: color 120ms ease;
+body {
+  background: var(--page);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
-a:hover {
-  color: var(--color-link-hover);
+/* Monospaced numerals for the commit hash / version line. */
+.tnum {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: 'tnum';
+}
+
+:where(a, button, input, select, textarea, [tabindex]):focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--accent) 28%, transparent);
+}
+
+@layer base {
+  a {
+    color: var(--accent);
+  }
 }

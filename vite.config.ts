@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite';
 import { sveltekit } from '@sveltejs/kit/vite';
+import tailwindcss from '@tailwindcss/vite';
 import { execSync } from 'node:child_process';
 import fs from 'node:fs';
 
@@ -13,11 +14,13 @@ try {
   // ignore if git not available (e.g. CI build image)
 }
 
+const buildDate = new Date().toISOString().slice(0, 10);
+
 export default defineConfig({
-  plugins: [sveltekit()],
+  plugins: [tailwindcss(), sveltekit()],
   define: {
     __APP_VERSION__: JSON.stringify(version),
-    __APP_COMMIT__: JSON.stringify(commit)
-  },
-
+    __APP_COMMIT__: JSON.stringify(commit),
+    __APP_BUILD_DATE__: JSON.stringify(buildDate)
+  }
 });

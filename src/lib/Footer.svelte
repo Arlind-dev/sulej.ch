@@ -1,50 +1,39 @@
 <script lang="ts">
   import type { VersionInfo } from "./version";
-  import { site, currentYear } from "./site.config";
-  export let versionInfo: VersionInfo;
+  import { site } from "./site.config";
+
+  let { versionInfo }: { versionInfo: VersionInfo } = $props();
+
+  const link = "text-sm text-muted transition-colors hover:text-text";
 </script>
 
-<footer>
-  <div style="display: inline-flex; align-items: baseline; gap: 1rem; margin: 1rem 0 0;">
-    <small>© {currentYear} {site.domain}</small>
-    <small>
-      {#if site.githubRepo}
-        <a class="version-link" href={site.githubRepo}>
-          {versionInfo.version} <span class="commit">({versionInfo.commit})</span>
-        </a>
-      {:else}
-        <span class="version-link" aria-label="App version">
-          {versionInfo.version} <span class="commit">({versionInfo.commit})</span>
-        </span>
-      {/if}
-    </small>
+<footer class="mt-16 border-t border-line">
+  <div
+    class="mx-auto grid max-w-2xl grid-cols-1 gap-8 px-4 py-10 text-center sm:grid-cols-2 sm:gap-16 sm:text-left"
+  >
+    <div class="flex flex-col items-center gap-2 sm:items-start">
+      <a href={site.githubRepo} class="font-semibold tracking-tight text-accent">{site.domain}</a>
+      <div class="text-xs text-muted">{site.tagline}</div>
+      <a
+        href={site.githubRepo}
+        target="_blank"
+        rel="noreferrer"
+        class="mt-1 inline-flex items-center gap-2 text-[11px] text-faint transition-colors hover:text-muted"
+      >
+        <span class="font-medium">{versionInfo.version}</span>
+        <span class="tnum">{versionInfo.commit}</span>
+        <span class="tnum">{versionInfo.buildDate}</span>
+      </a>
+    </div>
+
+    <nav class="flex flex-col items-center gap-2.5 sm:items-end sm:text-right">
+      <a href={site.githubRepo} target="_blank" rel="noreferrer" class={link}>Source</a>
+      <a href="{site.githubRepo}/blob/main/CHANGELOG.md" target="_blank" rel="noreferrer" class={link}>
+        Changelog
+      </a>
+      <a href="{site.githubRepo}/blob/main/LICENSE" target="_blank" rel="noreferrer" class={link}>
+        License
+      </a>
+    </nav>
   </div>
 </footer>
-
-<style>
-  .version-link {
-    color: inherit;
-    text-decoration: none;
-    border-bottom: 1px solid transparent;
-    opacity: 0.85;
-    transition: border-color 120ms ease, opacity 120ms ease, color 120ms ease;
-  }
-
-  .version-link:hover {
-    border-color: currentColor;
-    opacity: 1;
-  }
-
-  .version-link:focus-visible {
-    outline: 2px solid currentColor;
-    outline-offset: 2px;
-    border-color: transparent;
-  }
-
-  .commit {
-    opacity: 0.7;
-    letter-spacing: 0.02em;
-    font-family: var(--font-mono);
-    font-variant-numeric: tabular-nums;
-  }
-</style>
